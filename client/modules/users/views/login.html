@@ -1,0 +1,35 @@
+<template name="login">
+
+    <section id="login">
+      <div class="container container-wrapper">
+        <div class="col-md-12">
+          <div class="row text-center">
+            <h2>ENTRAR</h2>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+          <form id="log">
+            <div class="form-group">
+              <input type="text" name="email" placeholder="Email" class="form-control input-border" required>
+            </div>
+            <div class="form-group">
+              <input type="password" name="senha" placeholder="Senha" class="form-control input-border" required>
+            </div>
+            <div class="form-group">
+              <!-- <input type="submit" value="Login"> -->
+              <button type="submit" class="btn btn-success">ACESSAR</button>
+            </div>
+            <!-- <div class="form-group">
+              <input id="informativo" type="checkbox">
+              <label for="informativo"><span></span>Mantenha-me conectado.</label>
+            </div> -->
+            <!-- <hr> -->
+          </form>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+          <a class="login" href="{{pathFor 'register'}}" title="Cadastrar">Não sou cadastrado.<span> Quero me cadastrar</span></a>
+        </div>
+      </div>
+    </section>
+
+</template>
