@@ -1,3 +1,75 @@
 <template name="editUser">
-  <h1>{{user.profile.name}}</h1>
+        <div class="box box-default">
+          <div class="box-body">
+
+            <!-- <h4>User Roles</h4>
+            {{#each roles}}
+            <button class="btn btn-primary btn-xs btn-remove-role" role="{{this}}" user="{{admin_current_id}}">{{this}}</button>
+            {{/each}}
+            {{#each otherRoles}}
+            <button class="btn btn-default btn-xs btn-add-role" role="{{this}}" user="{{admin_current_id}}">{{this}}</button>
+            {{/each}}
+            {{#if roles}}
+            <p style="margin-top:5px;">Click a role to toggle it.</p>
+            {{else}}
+            <p>User not in any roles. Click a role to add it to a user.</p>
+            {{/if}} -->
+            <h4>Tipo</h4>
+            <button class="btn {{btnClass 'PF'}} btn-xs btn-role" data-role="PF">Usuário</button>
+            <button class="btn {{btnClass 'PJ'}} btn-xs btn-role" data-role="PJ">Restaurante</button>
+            <button class="btn {{btnClass 'ADMIN'}} btn-xs btn-role" data-role="ADMIN">Admin</button>
+            <hr>
+
+            <!-- <hr/> -->
+            <h4>Perfil</h4>
+              <div class="row">
+                <div class="col-md-6">
+                    <label for="nome" class="control-label">Nome</label>
+                    <input value="{{admin_current_doc.profile.name}}" type="text" name="nome" class="form-control" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="control-label">Email</label>
+                    <input value="{{admin_current_doc.emails.[0].address}}" type="text" name="email" class="form-control" disabled>
+                </div>
+              </div>
+            <hr/>
+
+            <h4>Resetar Senha</h4>
+            <p>Envie um email de resetar senha para {{admin_current_doc.emails.[0].address}}</p>
+            <button id="sendReset" type="submit" data-style="zoom-in" class="btn btn-primary btn-sm">
+                <span class="ladda-label">Enviar email</span>
+            </button>
+
+            <hr/>
+            <h4>Mudar senha</h4>
+            <form id="changePass">
+              <div class="form-group" data-required="true">
+                  <label for="3E8RwQxMySQwFPcpb" class="control-label">Senha</label>
+                  <input type="text" name="senha" id="senha" required="" data-schema-key="password" class="form-control">
+                  <span class="help-block"></span>
+              </div>
+              <button type="submit" data-style="zoom-in" class="btn btn-primary btn-sm btn-change-pass">
+                  <span class="ladda-label">Mudar senha</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="editUserModal modal fade" id="admin-delete-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Acesso privado</h4>
+              </div>
+              <div class="modal-body">
+                <p>Para alterar a senha, é necessário confirmar a senha do administrador:</p>
+                <input type="password" name="senhaAdmin" id="senhaAdmin" required="" data-schema-key="password" class="form-control">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" id="confirm-editUser" class="btn btn-danger">Alterar Senha</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 </template>

@@ -1,12 +1,19 @@
 $.validator.setDefaults({
   rules: {
+    nome: {
+      required: true,
+    },
+    recoverEmail: {
+      required: true,
+      email: true
+    },
     email: {
       required: true,
       email: true,
     },
     senha: {
       required: true,
-      minlength: 6,
+      minlength: 4,
     },
     confirmarSenha: {
       required: true,

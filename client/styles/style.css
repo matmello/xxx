@@ -707,7 +707,7 @@ nav#filter a.current {
 	width: 100%;
 }
 .member-img {
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 .member-img img {
 	border-radius: 0px;

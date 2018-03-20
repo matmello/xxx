@@ -1,6 +1,31 @@
 <template name="register">
 
-<div class="container">
+    <section id="login">
+        <div class="loginPage">
+
+      <div class="row">
+        <div class="col-md-12">
+          <img src="/img/logo_v.png" alt="" class="img-responsive linkadinho">
+        </div>
+      </div>
+
+      <div class=" form">
+
+        <form class="login-form" id="reg" novalidate="novalidate">
+          <input type="text" placeholder="Nome" name="nome">
+          <input type="text" placeholder="Email" name="email">
+          <input type="password" placeholder="Senha" name="senha">
+          <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" class="form-control input-border" required>
+          <button type="submit">Registrar</button>
+          <p class="message">Já tenho uma conta <a href="{{pathFor 'login'}}">Fazer login</a></p>
+        </form>
+
+
+      </div>
+    </div>
+      </section>
+
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-16">
     <div class="row text-center">
@@ -22,19 +47,13 @@
         <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" class="form-control input-border" required>
       </div>
       <div class="form-group">
-        <!-- <input type="submit" value="Login"> -->
         <button type="submit" class="btn btn-success">CADASTRAR</button>
       </div>
-      <!-- <div class="form-group">
-        <input id="informativo" type="checkbox">
-        <label for="informativo"><span></span>Mantenha-me conectado.</label>
-      </div> -->
-      <!-- <hr> -->
     </form>
   </div>
   <div class="col-md-4 col-md-offset-4">
     <a class="login" href="{{pathFor 'login'}}" title="Cadastrar">Já tenho conta.<span> Quero Logar</span></a>
   </div>
   </div>
-</div>
+</div> -->
 </template>

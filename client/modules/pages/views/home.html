@@ -1,9 +1,394 @@
 <template name="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Home</h1>
-      </div>
+
+    <div id='preloader' >
+        <div class='loader' >
+            <img src="img/preloader.svg" width="60" alt="">
+        </div>
     </div>
-  </div>
-</template>
+
+    <header id="header" class="header_section">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="nav-btn navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- <a href="#" class="hidden-xs logo-small brand logo-dark"><img width="150px" src="./img/white_logo_up.png" alt="IS2EAT"></a> -->
+              <!-- <a href="#" class="visible-xs logo-cel logo-small brand logo-dark"><img src="./img/logo_small.png" alt="IS2EAT"></a> -->
+              <a style="display: none;" href="#" class="logo-written brand logo-dark"><img src="./img/logo_written.png" alt="IS2EAT"></a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse navbar-right">
+              <ul class="nav navbar-nav nav-menu">
+                <li class="active"><a data-scroll href="#large-header">Home <span class="sr-only">(current)</span></a></li>
+                <li><a data-scroll href="#docsection">O que é</a></li>
+                <li><a data-scroll href="#download">Nosso Papel</a></li>
+                <li><a data-scroll href="#features">#ÉPraVocê</a></li>
+                <li><a data-scroll href="#testimonial">Como Funciona</a></li>
+                <li><a data-scroll href="#promosection">Faça Parte</a></li>
+                <!-- <li><a href="">Login</a>|<a href="{{pathFor 'register'}}">Cadastro</a></li> -->
+                <li>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href=""><i class="fa fa-user" aria-hidden="true"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{pathFor 'login'}}">Login</a></li>
+                    <li><a href="{{pathFor 'register'}}">Registrar</a></li>
+                  </ul>
+                </li>
+                <!-- <li><div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Sony <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Tablet</a></li>
+                      <li><a href="#">Smartphone</a></li>
+                    </ul>
+                  </div></li> -->
+                          </ul>
+            </div><!--/.navbar-collapse -->
+          </div>
+        </nav><!-- Navigation Bar -->
+      </header> <!-- Header -->
+
+      <section id="large-header" class="hero_section">
+
+          <canvas id="bubble-canvas"></canvas>
+          <div class="pull-right hero_moc hidden-sm hidden-xs"></div><!-- /.hero_moc -->
+          <div class="container">
+            <div class="display-table">
+              <div class="table-cell">
+                <div class="col-md-6">
+                  <div class="hero_content">
+                      <!-- <a href="#" class="hidden-xs logo-small brand logo-dark"></a> -->
+                      <img width="150px" src="./img/white_logo_up.png" alt="IS2EAT">
+                    <h1>Conheça o <br>IS2EAT</h1>
+                    <p>A primeira plataforma digital anti-desperdício de alimentos do Brasil.</p>
+                    <a href="#" class="hero_btn"><i class="fa fa-download"></i> Em breve disponível para download</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section><!-- /.hero_section -->
+
+
+        <section id="docsection" class="doc_section padding">
+            <div class="container">
+                    <div class="col-md-5 col-sm-6 col-md-offset-1 xs-hidden">
+                        <div class="doc_mockup">
+                            <img class="whatis" width="400px" src="./img/oqeh.png" alt="">
+                            <!-- <img src="./img/iphone-1.png" class="doc_mockup_1" alt="about-moc"> -->
+                            <!-- <img src="./img/iphone-2.png" class="doc_mockup_2 wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="800ms" alt="about-moc"> -->
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 xs-padding">
+                        <div class="doc_content">
+                            <h2>O que é o IS2EAT?</h2>
+                            <p class="desc">
+                              Somos uma plataforma digital que conecta pessoas e estabelecimentos com o objetivo
+                              de reduzir o desperdício de alimentos, proporcionando ao usuário acesso à refeições de
+                              qualidade e baixo custo, coletadas próximo ao horário de fechamento.
+                            </p>
+                            <p class="desc">
+                              Ao estabelecimento, a solução proporciona o aumento no faturamento com a venda
+                              de refeições que teriam a lixeira como destino, aumentando assim o número
+                              de clientes provando do seu tempero secreto!
+                            </p>
+                            <ul class="desc list_check mt-30 mb-30">
+                                <li>Mais pessoas alimentadas</li>
+                                <li>Menos desperdício</li>
+                                <li>Menos impacto para o nosso meio ambiente</li>
+                            </ul>
+                            <!-- <a href="#" class="app_btn">Faça Parte</a> -->
+                        </div>
+                    </div>
+                </div>
+        </section><!-- /.doc_section -->
+
+        <section id="download" class="download_section">
+            <div class="container">
+                <div class="counter_content">
+                    <!-- <h3 class="counter">12649</h3> -->
+                    <i class="fa fa-4x flag-papel fa-flag" aria-hidden="true"></i>
+                    <h4>Nosso Papel</h4>
+                    <p>
+                        O alimento não consumido que vai para o lixo gera perdas de 940 bilhões de dólares ao
+                        ano em todo o mundo, de acordo com a FAO (Organização das Nações Unidas para a
+                        Alimentação e a Agricultura). Outro agravante apontado é que a comida que vai parar
+                        nos aterros gera 8% das emissões de gases de efeito estufa.
+                        Há muitas discussões sobre o destino adequado de alimentos que não são mais próprios
+                        ao consumo humano entretanto, poucas sobre como proporcionar que estes alimentos
+                        sejam consumidos antes de se encontrarem em situação de descarte.
+                        Nosso papel é conectar os alimentos com seus melhores parceiros: estômagos famintos!
+                    </p>
+                </div>
+               <!-- <ul class="download_content">
+                   <li><a href="#"><i class="fa fa-windows"></i></a></li>
+                   <li><a href="#"><i class="fa fa-android"></i></a></li>
+                   <li><a href="#"><i class="fa fa-apple"></i></a></li>
+               </ul> -->
+            </div>
+        </section><!-- /.download_section -->
+
+        <section id="features" class="feature_section padding">
+                <div class="container">
+                   <div class="section-heading align-center mb-40">
+                       <h2>#ÉPraVocê</h2>
+                       <p>
+                         Veja alguns dos benefícios para seu estabelecimento, ao se juntar ao IS2EAT
+                       </p>
+                   </div>
+                   <div class="feature_wrap">
+                        <div class="col-md-4 col-xs-6">
+                            <ul class="feature_list text-right xs-no-padding">
+                                <li class="list_item mb-40 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="800ms">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <!-- <h4 class="mb-10">Responsive Design</h4> -->
+                                    <p>Ampliação da sua receita com vendas on-line e redução de desperdícios</p>
+                                </li>
+                                <li class="list_item mb-40 wow fadeInRight" data-wow-delay="200ms" data-wow-duration="800ms">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <p>Reforço da sua marca com ampliação de clientes</p>
+                                    <!-- <h4 class="mb-10">Bootstrap 3.1</h4> -->
+                                  </li>
+                                    <li class="list_item wow fadeInRight" data-wow-delay="400ms" data-wow-duration="800ms">
+                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                    <!-- <h4 class="mb-10">Cross Browser Support</h4> -->
+                                    <p>Vínculo da sua marca ao compromisso de sempre fornecer alimentos frescos, sem reaproveitamento de preparações em dias seguintes</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 hidden-sm hidden-xs wow fadeInUp" data-wow-delay="0ms" data-wow-duration="800ms">
+                            <!-- <img src="./img/feature-moc.png" alt="Service" class="feature_moc"> -->
+                            <div class="globe-wrapper text-center">
+                                <a target="_blank" href='https://br.freepik.com/vetores-gratis/projeto-do-fundo-do-negocio_950169.htm'><img class="center-block img-responsive" src="./img/pravc.png" alt=""></a>
+                                <!-- <i class="fa globe fa-8x fa-globe" aria-hidden="true"></i> -->
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-6">
+                            <ul class="feature_list xs-no-padding">
+                                <li class="list_item mb-40 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="800ms">
+                                    <i class="fa fa-usd" aria-hidden="true"></i>
+                                    <!-- <h4 class="mb-10">Simple frendly interface</h4> -->
+                                    <p>Redução dos custos de descarte de redíduos e dos impactos negativos ao meio ambiente</p>
+                                </li>
+                                <li class="list_item mb-40 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="800ms">
+                                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                                    <!-- <h4 class="mb-10">Personalized user support</h4> -->
+                                    <p>Simplificação do seu processo de venda, com pagamento direto no APP</p>
+                                </li>
+                                <li class="list_item wow fadeInLeft" data-wow-delay="400ms" data-wow-duration="800ms">
+                                    <i class="fa fa-globe" aria-hidden="true"></i>
+                                    <p>Vínculo da sua marca à iniciativa sustentável e humanitária</p>
+                                    <!-- <h4 class="mb-10">Great community</h4> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- feature-section -->
+
+            <section id="testimonial" class="hidden-xs center-block testimonial_section">
+                <div class="container">
+                  <!-- <ul id="testimonial_carousel" class="testimonial_items owl-carousel">
+                              <li class="testimonial_item">
+                                  <p>"There are design companies, and then there are user experience design interface design<br> professional. By far one of the worlds best known brands."</p>
+                                  <h4>Anita Tran, IT Solutions.</h4>
+                              </li>
+                              <li class="testimonial_item">
+                                  <p>"There are design companies, and then there are user experience design interface design<br> professional. By far one of the worlds best known brands."</p>
+                                  <h4>Leslie Williamson, Developer.</h4>
+                              </li>
+                              <li class="testimonial_item">
+                                  <p>"There are design companies, and then there are user experience design interface design<br> professional. By far one of the worlds best known brands."</p>
+                                  <h4>Fred Moody, Network Software.</h4>
+                              </li>
+                          </ul> -->
+                </div>
+              </section><!-- /.testimonial_section -->
+
+             <section id="promosection" class="promo_section padding">
+          <div class="container">
+            <div class="text-center">
+              <h4 class="how-works">Como funciona?</h4>
+            </div>
+            <div class="promo_items">
+              <div class="col-sm-4 col-xs-6 xs-padding">
+                <div class="promo_item">
+                  <i class="icon-happy"></i>
+                  <!-- <h3>Fully Responsive</h3> -->
+                  <p>
+                    Seus alimentos excedentes do dia ficam disponíveis para compra via APP. Você controla a
+                    quantidade de porções disponíveis, a descrição do cardápio e o horário para retirada
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-4 col-xs-6 xs-padding">
+                <div class="promo_item">
+                  <i class="icon-mobile"></i>
+                  <!-- <h3>Clean Design</h3> -->
+                  <p>
+                    Você acompanha de forma on-line na plataforma os pedidos feitos pelo APP
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-4 col-xs-6 xs-padding">
+                <div class="promo_item">
+                  <i class="icon-recycle"></i>
+                  <!-- <h3>Pixel Perfect</h3> -->
+                  <p>
+                    Receba os clientes no horário combinado, confirme o recibo apresentado por eles no APP e sirva-os de suas melhores receitas!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+        <div id="subscribe" class="subscribe_section">
+          <div class="subscribe_wrapper">
+              <img class="center-block" width="100px" src="./img/white_logo_up.png" alt="IS2EAT">
+            <div class="container">
+                <div class="subscribe_wrap counter_content">
+                  <h4 class="formToHide">Gostou e quer fazer parte da nossa missão?</h4>
+                  <p class="formToHide">
+                    Preencha o cadastro abaixo para conhecermos melhor seu negócio!
+                    Nossa plataforma será lançada em breve mas já precisamos de você
+                    como um de nossos fornecedores!
+                  </p>
+                     <form class="formToHide subscribe_form">
+                       <div class="row">
+                         <div class="col-md-4">
+                            <input type="text" name="q1" id="nome" class="form_input" placeholder="Nome">
+                            <input type="email" name="q4" id="subs-email" class="form_input" placeholder="Email">
+                            <input type="text" name="q5" id="telefone" class="form_input" placeholder="Telefone">
+                          </div>
+                          <div class="col-md-4">
+                              <input type="text" name="q2" id="nome" class="form_input" placeholder="Nome do Estabelecimento">
+                              <input type="text" name="q3" id="nome" class="form_input" placeholder="Cargo">
+                              <input type="text" name="q6" id="nome" class="form_input" placeholder="Desperdício diário de alimentos">
+                          </div>
+                         <div class="col-md-4">
+                            <textarea placeholder="Deixe-nos uma mensagem" name="mensagem" id="" rows="3"></textarea>
+                            <button id="submitPreLaunch" type="submit" class="submit">Enviar</button>
+                         </div>
+                       </div>
+
+                         <div class="clearfix"></div>
+                         <div id="subscribe-result">
+                             <p class="subscription-success"></p>
+                             <p class="subscription-error"></p>
+                         </div>
+                     </form>
+                     <div style="display:none" id="thanks"><b>Obrigado! Registramos seu interesse e em breve entraremos em contato para apresentarmos a nossa plataforma que será lançada em Fevereiro de 2018.<br><br>Equipe IS2EAT</b></div>
+                 </div>
+                 <!-- <ul class="social_link">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                 </ul> -->
+           </div>
+          </div><!-- /.subscribe_wrapper -->
+       </div><!-- /.footer_top_section -->
+
+        <!-- <div id="subscribe" class="subscribe_section">
+       		<div class="subscribe_wrapper">
+       			<div class="container">
+	               <div class="subscribe_wrap counter_content">
+                   <h4 class="formToHide">Gostou e quer fazer parte da nossa missão?</h4>
+                   <p class="formToHide">
+                     Preencha o cadastro abaixo para conhecermos melhor seu negócio!
+                     Nossa plataforma será lançada em breve mas já precisamos de você
+                     como um de nossos fornecedores!
+                   </p>
+                   <form id="theForm" class="simform" autocomplete="off">
+                      <div class="simform-inner">
+                        <ol class="questions">
+                          <li>
+                            <span><label for="q1">Qual seu nome?</label></span>
+                            <input id="q1" name="q1" type="text"/>
+                          </li>
+                          <li>
+                            <span><label for="q2">Em que estabelecimento trabalha?</label></span>
+                            <input id="q2" name="q2" type="text"/>
+                          </li>
+                          <li>
+                            <span><label for="q3">Que cargo ocupa no estabelecimento?</label></span>
+                            <input id="q3" name="q3" type="text"/>
+                          </li>
+                          <li>
+                            <span><label for="q4">Qual seu email?</label></span>
+                            <input id="q4" name="q4" type="text"/>
+                          </li>
+                          <li>
+                              <span><label for="q5">Qual seu telefone?</label></span>
+                              <input id="q5" name="q5" type="text"/>
+                            </li>
+                        </ol>
+                        <button class="submit" type="submit">Send answers</button>
+                        <div class="controls">
+                          <button class="next"></button>
+                          <div class="progress"></div>
+                          <span class="number">
+                            <span class="number-current"></span>
+                            <span class="number-total"></span>
+                          </span>
+                          <span class="error-message"></span>
+                        </div>
+                      </div>
+                      <span class="final-message"></span>
+                    </form>
+	                </div>
+            </div>
+       		</div>
+        </div> -->
+
+        {{#if instaPosts}}
+
+        <section class="posts">
+          <a target="_blank" href="https://www.instagram.com/is2eat/"><h3 class="text-center"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i><br>FOLLOW @is2eat </h3></a>
+          <div class="row">
+          {{#each instaPosts}}
+          <div class="col-md-2 col-sm-4 col-xs-6 no-padding">
+              <a href="{{url}}" target="_blank"><img class="img-responsive" src="{{display_src}}" alt=""></a>
+          </div>
+          {{/each}}
+          </div>
+        </section>
+
+        {{/if}}
+
+		<footer class="footer_section">
+			<div class="container">
+				<div class="col-sm-6 xs-padding">
+					<p class="copyright">&copy; 2017 IS2EAT</p>
+				</div>
+				<nav class="col-sm-6 xs-padding">
+					<ul class="footer_menu">
+              <li class="active"><a data-scroll href="#large-header">Home <span class="sr-only">(current)</span></a></li>
+              <li><a data-scroll href="#docsection">O que é</a></li>
+              <li><a data-scroll href="#download">Nosso Papel</a></li>
+              <li><a data-scroll href="#features">#ÉPraVocê</a></li>
+              <li><a data-scroll href="#testimonial">Como Funciona</a></li>
+              <li><a data-scroll href="#promosection">Faça Parte</a></li>
+					</ul>
+				</nav>
+			</div>
+    </footer><!-- /.footer_section -->
+
+    <a data-scroll href="#header" id="scroll-to-top"><i class="arrow_carrot-up"></i></a>
+
+
+
+
+
+
+
+
+    </template>

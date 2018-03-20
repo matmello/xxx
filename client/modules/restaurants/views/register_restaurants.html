@@ -1,0 +1,222 @@
+<template name="registerRestaurant">
+<section id="login">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="row bs-wizard">
+                    <div class="col-xs-3 bs-wizard-step active">
+                        <div class="text-center bs-wizard-stepnum">Dados básicos</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                      </div>
+
+                      <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+                        <div class="text-center bs-wizard-stepnum">Endereço</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                      </div>
+
+                      <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+                        <div class="text-center bs-wizard-stepnum">Dados complementares</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                      </div>
+
+                      <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+                        <div class="text-center bs-wizard-stepnum">Imagens</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                      </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="registerPage loginPage">
+
+
+              <div class=" form">
+
+                <form class="login-form" id="reg" novalidate="novalidate">
+
+                    <div class="step1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                    <label class="pull-left" for="nome">Nome fantasia</label>
+                                    <input type="text" placeholder="" name="nome">
+                                    <label class="pull-left" for="cnpj">CNPJ</label>
+                                    <input type="text" placeholder="" name="cnpj">
+                                    <label class="pull-left" for="razao">Razão social</label>
+                                    <input type="text" placeholder="" name="razao">
+                                    <label class="pull-left" for="telefone">Telefone</label>
+                                    <input type="text" placeholder="" name="telefone">
+                            </div>
+                            <div class="col-md-6">
+                                    <label class="pull-left" for="facebook">Facebook</label>
+                                    <input value="http://facebook.com/" type="text" placeholder="" name="facebook">
+                                    <label class="pull-left" for="instagram">Instagram</label>
+                                    <input value="@" type="text" placeholder="" name="instagram">
+                                    <label class="pull-left" for="categoria">Categoria</label>
+                                    <select name="categoria" id="">
+                                        <option value="">Escolha uma opção</option>
+                                        {{#each categorias}}
+                                        <option value="{{_id}}">{{nome}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <label class="pull-left" for="especialidade">Especialidade</label>
+                                    <select name="especialidade" id="">
+                                            <option value="">Escolha uma opção</option>
+                                            {{#each especialidades}}
+                                            <option value="{{_id}}">{{nome}}</option>
+                                            {{/each}}
+                                    </select>
+                            </div>
+                        </div>
+                        <button class="btn-step to2" type="submit">Avançar <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div style="display: none;" class="step2">
+                        <div class="row">
+                                <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
+                                <div id="holder" style="position: relative;">
+                                        <!-- <div class="overlay standard">Carregando localização...<br><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div> -->
+                                        <div id="map"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="Endereço" name="endereco">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="CEP" name="cep">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Bairro" name="bairro">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-6">
+                                            <select name="estado" id="">
+                                                    <option value="">Estado</option>
+                                                    <option value="AC">Acre</option>
+                                                    <option value="AL">Alagoas</option>
+                                                    <option value="AP">Amapá</option>
+                                                    <option value="AM">Amazonas</option>
+                                                    <option value="BA">Bahia</option>
+                                                    <option value="CE">Ceará</option>
+                                                    <option value="DF">Distrito Federal</option>
+                                                    <option value="ES">Espírito Santo</option>
+                                                    <option value="GO">Goiás</option>
+                                                    <option value="MA">Maranhão</option>
+                                                    <option value="MT">Mato Grosso</option>
+                                                    <option value="MS">Mato Grosso do Sul</option>
+                                                    <option value="MG">Minas Gerais</option>
+                                                    <option value="PA">Pará</option>
+                                                    <option value="PB">Paraíba</option>
+                                                    <option value="PR">Paraná</option>
+                                                    <option value="PE">Pernambuco</option>
+                                                    <option value="PI">Piauí</option>
+                                                    <option value="RJ">Rio de Janeiro</option>
+                                                    <option value="RN">Rio Grande do Norte</option>
+                                                    <option value="RS">Rio Grande do Sul</option>
+                                                    <option value="RO">Rondônia</option>
+                                                    <option value="RR">Roraima</option>
+                                                    <option value="SC">Santa Catarina</option>
+                                                    <option value="SP">São Paulo</option>
+                                                    <option value="SE">Sergipe</option>
+                                                    <option value="TO">Tocantins</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" placeholder="Cidade" name="cidade">
+                                        </div>
+                                    </div>
+                            <button class="btn-step to1" type="submit"><i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar</button>
+                            <button class="btn-step to3" type="submit">Avançar <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div style="display: none;" class="step3">
+                        <div class="row">
+                            <!-- <div class="col-md-6">
+                                <input type="text" placeholder="Facebook" name="facebook">
+                                <input type="text" placeholder="Instagram" name="instagram">
+                            </div> -->
+                            <div class="col-md-12 cartoes-wrap">
+                                    <div class="checkbox form-cartoes">
+                                            <div class="title pull-left" for="">Cartões Aceitos:</div><br>
+                                       {{#each cartoes}}
+
+                                            <label class="check-item pull-left">
+                                              <input name="cartoes" type="checkbox" data-id="{{_id}}" value="{{_id}}">
+                                              <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                              {{nome}}
+                                            </label>
+
+                                       {{/each}}
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 hours">
+                                <div class="title pull-left">Horário para retirada dos pedidos:</div>
+                                <div id="businessHoursContainer"></div>
+                            </div>
+                        </div>
+                            <button class="btn-step to2from3" type="submit"><i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar</button>
+                            <button class="btn-step to4" type="submit">Avançar <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div style="display: none;" class="step4">
+                        <div class="row">
+                            <h3>Selecione as imagens de logotipo e capa <br>que serão exibidas no Aplicativo</h3>
+                            <div class="col-md-6 hidden">
+                                <label for="">Logo</label>
+                                <input id="logo-img" type="file">
+                            </div>
+                            <div class="col-md-6 hidden">
+                                <label for="">Imagem de capa</label>
+                                <input id="capa-img" type="file">
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="btn-group">
+                                        <button type="button" class="logo-btn btn btn-secondary"><i class="fa fa-plus" aria-hidden="true"></i><br>Logo</button>
+                                        <button type="button" class="capa-btn btn btn-secondary"><i class="fa fa-plus" aria-hidden="true"></i><br>Capa</button>
+                                </div>
+                        </div>
+                        <div class="row crop-div">
+                            <span class="tooltip-img">
+                                Você pode arrastar a imagem de capa para reposicioná-la como preferir 
+                            </span>
+                            <div class="center-block ov">
+                                <!-- <div class="center-block cel-preview">
+
+                                </div> -->
+                                    <!-- <img width="350" src="/img/home_up.png" /> -->
+                                    <!-- <p>
+                                            <button data-tooltip="I'm a tooltip!" data-tooltip-top="50">A tooltip trigger</button>
+                                            </p> -->
+                                    <img  id="target" class="crop" alt="" src="/img/capa.png" />
+                                    <img id="target-logo" class="crop-logo" alt="" src="/img/logo-crop.png" >
+                                    <div class="crop-overlay">
+                                        <span class="title">{{restaurantNome}}</span><span class="rate pull-right">5.0 <i class="fa fa-star" aria-hidden="true"></i></span><br>
+                                        <span class="category">{{categoriaNome}}</span><span class="local pull-right">800m</span>
+                                    </div>
+                                    <!-- <img width="350" src="/img/home_down.png" /> -->
+                                <!-- <div class="cel-wrap">
+                                    <img id="capa-img-src" src="" alt="">
+                                </div> -->
+                            </div>
+                                <button class="btn-step to3from4" type="submit"><i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar</button>
+                                <button class="btn-step confirm" type="submit">Concluir <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+              </div>
+            </div>
+
+</section>
+</template>

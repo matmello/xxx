@@ -3,6 +3,18 @@
 
   },
   "private": {
-
+    "cielo": {
+      "apikey": "x",
+      "secretkey": "x"
+    },
+    "email": {
+      "login": "x",
+      "password": "x",
+      "domain": "smtp.gmail.com",
+      "port": 587
+    },
+    "fcm": {
+      "ios": "x"
+    }
   }
 }

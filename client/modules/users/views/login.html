@@ -1,35 +1,36 @@
 <template name="login">
 
-    <section id="login">
-      <div class="container container-wrapper">
-        <div class="col-md-12">
-          <div class="row text-center">
-            <h2>ENTRAR</h2>
-          </div>
-        </div>
-        <div class="col-md-4 col-md-offset-4">
-          <form id="log">
-            <div class="form-group">
-              <input type="text" name="email" placeholder="Email" class="form-control input-border" required>
-            </div>
-            <div class="form-group">
-              <input type="password" name="senha" placeholder="Senha" class="form-control input-border" required>
-            </div>
-            <div class="form-group">
-              <!-- <input type="submit" value="Login"> -->
-              <button type="submit" class="btn btn-success">ACESSAR</button>
-            </div>
-            <!-- <div class="form-group">
-              <input id="informativo" type="checkbox">
-              <label for="informativo"><span></span>Mantenha-me conectado.</label>
-            </div> -->
-            <!-- <hr> -->
-          </form>
-        </div>
-        <div class="col-md-4 col-md-offset-4">
-          <a class="login" href="{{pathFor 'register'}}" title="Cadastrar">Não sou cadastrado.<span> Quero me cadastrar</span></a>
-        </div>
-      </div>
-    </section>
+  <section id="login">
+    <div class="loginPage">
+
+  <div class="row">
+    <div class="col-md-12">
+      <img src="/img/logo_v.png" alt="" class="img-responsive linkadinho">
+    </div>
+  </div>
+
+  <div class="form">
+
+    <form class="register-form" id="reg" novalidate="novalidate">
+      <input type="text" placeholder="Email" name="recoverEmail">
+      <button type="submit" data-style="zoom-in" class="ladda-button recoverBtn btn btn-block">
+            <span class="ladda-label">Recuperar Senha</span>
+      </button>
+      <p class="message"><a href="#">De volta ao login</a></p>
+    </form>
+
+
+    <form class="login-form" id="log" novalidate="novalidate">
+      <input type="text" placeholder="Email" name="email">
+      <input type="password" placeholder="Senha" name="senha">
+      <button type="submit">login</button>
+      <p class="message">Não tenho uma conta <a href="{{pathFor 'register'}}">Quero me registrar</a></p>
+      <p class="message"><a href="#">Esqueci minha senha</a></p>
+    </form>
+
+
+  </div>
+</div>
+  </section>
 
 </template>

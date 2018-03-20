@@ -4,6 +4,38 @@ Template.login.events({
   },
 });
 
+Template.login.onRendered(()=>{
+  const self = Template.instance();
+
+  const recoverValidator = $('#reg').validate({
+    submitHandler() {
+      let email = self.find('[name=recoverEmail]').value;
+      let btn = Ladda.create(document.querySelector('.recoverBtn'));
+      btn.start();
+
+      Accounts.forgotPassword({email: email}, function(error, result){
+      if (error) {
+        console.log(error);
+        btn.stop();
+        if(error.error==403){
+          return recoverValidator.showErrors({recoverEmail: 'Usuário nāo encontrado'});
+        }
+      } else {
+        console.log(result);
+        // sAlert.success('E-mail enviado, clique no link que enviamos para redefinir sua senha.', {effect:"genie", position:"bottom", onRouteClose: false});
+        btn.stop();
+        toastr.success("E-mail enviado, clique no link que enviamos para redefinir sua senha.");
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        $('[name=recoverEmail]').val('');
+        // Router.go("login");
+      }
+      });
+
+    }
+  });
+
+});
+
 Template.login.onRendered(function(){
   var validator = $('form#log').validate({
     submitHandler: function(event) {
@@ -26,12 +58,31 @@ Template.login.onRendered(function(){
         } else {
           if (Router.current().route.getName()=='login'){
               // Router.go('adminDashboard');
-              Router.go('perfil');
+              let userRestaurant = Restaurants.findOne({userId: Meteor.userId()});
 
+              if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+                Router.go('adminDashboard');
+              } else {
+                if (userRestaurant) {
+                  Session.set('restaurantId', userRestaurant._id);
+                  Router.go('dashboard');
+                } else {
+                  Router.go('registerRestaurant');
+                }
+              }
           }
         }
       });
 
     }
   });
+});
+
+Template.login.onRendered(()=>{
+  const self = Template.instance();
+
+  $('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
+
 });

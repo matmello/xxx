@@ -40,7 +40,7 @@ Template.register.onRendered(function(){
             });
           }
         } else {
-          Router.go('perfil');
+          Router.go('registerRestaurant');
           // $('html, body').animate({ scrollTop: 0 }, 'slow');
         }
       });

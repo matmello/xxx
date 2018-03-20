@@ -1,0 +1,293 @@
+.light-sidebar {
+    padding-bottom: 0!important;
+    position: fixed!important;
+}
+
+.light-left {
+    float: right!important;
+}
+
+.light-left>li>a {
+    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif!important;
+}
+
+
+
+.light-left .nav-link {
+    line-height: 40px!important;
+}
+
+.light-dash .navbar {
+    border: 0;
+    font-size: 16px;
+    border-radius: 0;
+    min-height: 50px;
+    background-color: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 15px;
+}
+
+.light-dash .dropdown-menu {
+    visibility: hidden; 
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    display: block;
+    z-index: 9000;
+    position: absolute;
+    opacity: 0; 
+    filter: alpha(opacity=0);
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125);
+}
+
+.light-dash .card {
+    min-height: 600px;
+}
+
+.icon-board {
+    margin-top: 30px;
+    padding-top: 20px
+}
+
+.nav-btns {
+    /* width: 200px; */
+    margin-top: 20px;
+}
+
+.ghost-btn {
+    width: 100px;
+    padding-top: 10px;
+}
+
+.dash-btn-wrap {
+    margin-top: 20px;
+}
+
+.btn-dash {
+    /* margin: 0 5px; */
+    /* width: 100%!important; */
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: rgb(244, 131, 74);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.title-board {
+    margin-top: 20px;
+}
+
+.light-dash .descricao {
+    width: 500px;
+}
+
+.light-warn {
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 0 50px;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #4CAF50;
+  }
+
+  .tab {
+    display: none;
+  }
+
+  .btns-navigation {
+      margin-top: 80px;
+  }
+
+  .btns-navigation .btn {
+    border-width: 0.5px;
+    border-color: #ccc;
+}
+
+.light-dash .nav > li > a:focus {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+  #regForm .title {
+      padding-bottom: 20px;
+  }
+
+  .disable-item {
+      display: block;
+  }
+
+  .grupo .btn-group button {
+    background-color: rgb(215, 107, 56); /* Green background */
+    border: 1px solid organge; /* Green border */
+    color: white; /* White text */
+    padding: 10px 15px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; 
+    display: block; /* Make the buttons appear below each other */
+}
+
+.grupo .btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.grupo .btn-group button:hover {
+    background-color: rgb(200, 90, 50);
+}
+
+.active.dia-btn {
+    background-color: rgb(195, 62, 0)!important;
+}
+
+.light-dash .preview {
+    width: 300px;
+}
+
+.light-dash .up {
+    background: url('/img/up.png');
+    width: 300px;
+    height: 52px;
+}
+
+.light-dash .down {
+    background: url('/img/down.png');
+    width: 300px;
+    height: 40px;
+}
+
+.light-dash .preview .content p {
+    font-size: 13px;
+}
+
+.light-dash .content {
+    padding: 5px 5px;
+}
+
+.light-dash .card {
+    /* background-color: rgb(247, 247, 248)!important; */
+}
+
+#bankInfo {
+    padding: 20px 0;
+}
+
+.preview .up {
+    border-top: 2px solid rgb(200, 90, 50);
+    border-left: 2px solid rgb(200, 90, 50);
+    border-right: 2px solid rgb(200, 90, 50);
+}
+
+.preview .down {
+    border-bottom: 2px solid rgb(200, 90, 50);
+    border-left: 2px solid rgb(200, 90, 50);
+    border-right: 2px solid rgb(200, 90, 50);
+    margin-bottom: 10px;
+}
+
+.preview .content {
+    border-left: 2px solid rgb(200, 90, 50);
+    border-right: 2px solid rgb(200, 90, 50);
+}
+
+.crop-logo-dash {
+    left: 10px!important;
+    top: 13px!important;
+}
+
+.crop-overlay-dash {
+    left: 0!important;
+    width: 100%;
+    top: 52px!important;
+}
+
+.ov-dash {
+    /* margin-bottom: 20px; */
+    margin-top: 20px;
+    border-top: 2px solid rgb(200, 90, 50);
+    border-left: 2px solid rgb(200, 90, 50);
+    border-right: 2px solid rgb(200, 90, 50);
+    position: relative;
+}
+
+.ov-dash #target {
+    max-height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#regForm .crop-overlay .title {
+    padding-bottom: 0!important;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off {
+    background-color: red!important;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on {
+    background-color: green!important;
+}
+
+.switch-wrapper {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.switch-wrapper label {
+    margin-right: -55px;
+}
+
+.home-content {
+    padding-top: 70px;
+}
+
+.home-buttons {
+    margin-top: 20px;
+}
+
+.stock-wrapper {
+    padding-top: 30px;
+}
+
+#dateSelect {
+    /* width: 90px!important; */
+    margin-right: 10px;
+}
+
+.portion-item {
+    color: #1DC7EA;
+}
+
+.stock-wrapper .btn-dash {
+    width: 120px;
+    margin-top: 20px;
+}
+
+.home-no {
+    padding-top: 100px;
+}
