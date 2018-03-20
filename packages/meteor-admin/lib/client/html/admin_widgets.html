@@ -1,0 +1,106 @@
+<template name="adminDefaultWidgets">
+	<div class="row">
+		<div class="col-md-4">
+			{{>pushWidget}}
+		</div>
+	</div>
+	{{#each admin_collections}}
+		{{#unless $eq showWidget false}}
+			{{> adminCollectionWidget collection=name}}
+		{{/unless}}
+	{{/each}}
+</template>
+
+<template name="adminCollectionWidget">
+	<div class="{{#if class}}{{class}}{{else}}col-lg-3 col-xs-6{{/if}}">
+	{{#with adminGetCollection collection}}
+		<a href="/admin/{{this.name}}">
+			<div class="small-box bg-orange">
+				<div class="inner">
+					<h3>
+						{{adminCollectionCount name}}
+					</h3>
+					<p>
+						{{_ this.label}}
+					</p>
+				</div>
+				<div class="icon">
+					<i class="fa fa-{{this.icon}}"></i>
+				</div>
+				<a class="small-box-footer">
+					{{_ 'seeAll'}} <i class="fa fa-arrow-circle-right"></i>
+				</a>
+			</div>
+		</a>
+		{{/with}}
+	</div>
+</template>
+
+<template name="pushWidget">
+		<section data-toggle="modal" data-target="#pushModal" id="pushWidget">
+			<div class="info-box bg-orange">
+				<span class="info-box-icon"><i class="fa fa-bell"></i></span>
+				<div class="info-box-content">
+					<!-- <span class="info-box-text">Enviar push</span> -->
+					<span class="info-box-number">Enviar push</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Modal -->
+<div class="modal fade" id="pushModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<!-- <div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  ...
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		  </div>
+		</div> -->
+		<div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Enviar push</h4>
+				  </div>
+				  <div class="modal-body">
+
+					<div class="pushRadioGroup">
+						<div class="radio icheck-orange">
+							<input checked value="all" type="radio" id="all" name="pushRadio" />
+							<label for="all">Todos</label>
+						</div>
+
+						<div class="radio icheck-orange">
+							<input value="already" type="radio" id="already" name="pushRadio" />
+							<label for="already">Que já compraram</label>
+						</div>
+
+						<div class="radio icheck-orange">
+							<input value="never" type="radio" id="never" name="pushRadio" />
+							<label for="never">Que nunca compraram</label>
+						</div>
+					</div>
+
+					<label for="pushTitle">Título</label>
+					<input type="text" name="pushTitle" required="" class="form-control">
+					<label for="pushBody">Corpo</label>
+					<input type="text" name="pushBody" required="" class="form-control">
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					<button type="button" id="confirm-push" class="btn btn-danger">Enviar</button>
+				  </div>
+				</div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+	  </div>
+</template>

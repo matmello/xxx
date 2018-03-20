@@ -1,0 +1,7 @@
+#businessHoursContainer {
+  height: 140px;
+}
+
+.operationTime .mini-time {
+  width: 60px!important;
+}
