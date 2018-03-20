@@ -2,7 +2,7 @@ AdminConfig = {
   skin: 'red-light',
   name: 'IS2EAT',
   nonAdminRedirectRoute: 'home',
-  adminEmails: ['mat.mello93@gmail.com'],
+  adminEmails: ['admin@admin.com'],
   dashboard: {
 
   },
